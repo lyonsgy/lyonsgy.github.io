@@ -130,7 +130,7 @@
   <header class="post-header">
     <div class="post-meta">
       <time datetime="2018-03-19T21:05:00.000Z" class="post-list__meta--date date">2018-03-20</time> &#8226; <span class="post-meta__tags tags">于 
-  <a class="tag-link" href="/tags/笔记/">笔记</a>
+  <a class="tag-link" href="/tags/note/">note</a>
  </span>
       <span class="page-pv">
        Read <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
@@ -142,6 +142,22 @@
 
   <section class="post">
     <p>1.用 alloc/new/copy/mutableCopy 以外的方法取得的对象，非自己生成并持有的对象。</p>
+<p>2.引用计数：</p>
+<ul>
+<li>__strong</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	id __string obj = [[NSObject alloc] init];</span><br><span class="line">	NSLog(@&quot;retain count = %d&quot;, _objc_rootRetainCount(obj));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对象仅通过变量<code>obj</code>的强引用被持有，所以打印为<code>1</code>。</p>
+<ul>
+<li>__weak</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	id __string obj = [[NSObject alloc] init];</span><br><span class="line">	id __weak o = obj;</span><br><span class="line">	NSLog(@&quot;retain count = %d&quot;, _objc_rootRetainCount(obj));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>弱引用并不持有对象，所以赋值给附有<code>__weak</code>修饰符的变量不会改变引用计数的数值,打印为<code>1</code>。</p>
+<ul>
+<li>__autoreleasing</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	id __string obj = [[NSObject alloc] init];</span><br><span class="line">	id __autoreleasing o = obj;</span><br><span class="line">	NSLog(@&quot;retain count = %d&quot;, _objc_rootRetainCount(obj));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对象被附有<code>__strong</code>修饰符变量的强引用所持有，并且被注册到<code>autoreleasepool</code>中，所以打印为<code>2</code>。</p>
 
   </section>
 
@@ -161,7 +177,7 @@
                 &hellip;
                 </p>
                 <div class="post-list__meta"><time datetime="2018-03-20T06:16:00.000Z" class="post-list__meta--date date">2018-03-20</time> &#8226; <span class="post-list__meta--tags tags">于 
-  <a class="tag-link" href="/tags/介绍/">介绍</a>
+  <a class="tag-link" href="/tags/introduce/">introduce</a>
 </span><a class="btn-border-small" href="/2018/03/20/Welcome To Lyons Land/">继续阅读</a></div>
                            
             </div>
