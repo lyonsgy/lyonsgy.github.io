@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="z">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    
+    <title>iOS国际化配置 | Lyons&#39;s blog</title>
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="lyons&#39;s blog,lyons">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="iOS国际化配置 | Lyons&#39;s blog">
+    <meta name="twitter:description" content="lyons&#39;s blog,lyons">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="iOS国际化配置 | Lyons&#39;s blog">
+    <meta property="og:description" content="lyons&#39;s blog,lyons">
+
+    
+    <meta name="author" content="Lyons">
+    
+    <link rel="stylesheet" href="/css/vno.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+    
+    <link rel="icon" href="/images/avatar.png">
+    
+
+    <meta name="generator" content="hexo"/>
+    
+
+    <link rel="canonical" href="http://yoursite.com/2019/03/14/iOS国际化配置（swift4.2）/"/>
+
+                 
+</head>
+
+<body class="home-template no-js">
+    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+<header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/background.jpg)">
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/" title="前往 Lyons&#39;s blog 的主页"><img src="/images/avatar.png" width="80" alt="Lyons&#39;s blog logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for Lyons&#39;s blog">Lyons&#39;s blog</a></h1>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description"></p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="Visit the blog" class="blog-button">Blog</a></li>
+            
+            </ul>
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  <!-- Weibo-->
+  
+  <li class="navigation__item">
+    <a href="https://www.weibo.com/5562738198/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo" title="Weibo" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li> 
+
+
+  <!-- Github -->
+  
+  <li class="navigation__item">
+    <a href="https://github.com/lyonsgy" title="GitHub" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+
+<!-- Stack Overflow -->
+        
+
+  <!-- Google Plus -->
+  
+
+<!-- Facebook -->
+
+  
+<!-- Twitter -->
+
+  
+
+
+
+  </ul>
+</nav>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-blue"></div>
+  </div> 
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2019-03-14T10:16:00.000Z" class="post-list__meta--date date">2019-03-14</time> &#8226; <span class="post-meta__tags tags">于 
+  <a class="tag-link" href="/tags/note/">note</a>
+ </span>
+      <span class="page-pv">
+       Read <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+      </span> 
+   
+    </div>
+    <h1 class="post-title">iOS国际化配置</h1>
+  </header>
+
+  <section class="post">
+    <h3 id="配置需要国际化的语言"><a href="#配置需要国际化的语言" class="headerlink" title="配置需要国际化的语言"></a>配置需要国际化的语言</h3><p>配置需要国际化的语言的准备工作，一个项目中仅需要配置一次，适用范围（App名称、代码中的字符串、图片、还是storyboard和xib）。</p>
+<ul>
+<li><p>选中project-&gt;Info-&gt;Localizations，然后点击”+”，添加需要国际化/本地化的语言，如下图（默认需要勾选Use Base Internationalization）：<img src="https://uploader.shimo.im/f/XVVWtFuMtlAwqxHT.png!thumbnail" alt="图片"></p>
+</li>
+<li><p>选择你需要的语言后弹出选择框，勾选你需要国际化的文件（默认全选）<img src="https://uploader.shimo.im/f/ALOXyfCOqUsNbaxI.png!thumbnail" alt="图片"></p>
+</li>
+</ul>
+<h3 id="应用名称国际化"><a href="#应用名称国际化" class="headerlink" title="应用名称国际化"></a>应用名称国际化</h3><p> App 随设备语言环境（设备语言设置后）下变更</p>
+<ul>
+<li><p>选中Info.plist，按下键盘上的command + N，找到Strings File（iOS-&gt;Resource-&gt;Strings File），点击 Next<img src="https://uploader.shimo.im/f/xf9pUS6sK0QG3f1u.png!thumbnail" alt="图片"></p>
+</li>
+<li><p>文件名字命名为 <strong>InfoPlist</strong><img src="https://uploader.shimo.im/f/nhHHjtowK2YWYQIP.png!thumbnail" alt="图片"></p>
+</li>
+<li><p>点击create后，Xcode左侧导航列表就会出现名为InfoPlist.strings的文件，如下图：</p>
+</li>
+</ul>
+<p><img src="https://uploader.shimo.im/f/it5XDCc2pSArZkBT.png!thumbnail" alt="图片"></p>
+<ul>
+<li>选中InfoPlist.strings，在Xcode的File inspection（Xcode右侧文件检查器）中点击Localize，如下图：</li>
+</ul>
+<p><img src="https://uploader.shimo.im/f/6RLdc8Y4FLggD3Mz.png!thumbnail" alt="图片"></p>
+<ul>
+<li><p>点击 Localize 后，会弹出一个对话框，展开对话框列表（下拉列表所展示的语言是刚刚上面配置的需要国际化的语言），然后点击对话框的 Localize 按钮，如下图：<img src="https://uploader.shimo.im/f/T9Z6Jaiyb9oGnSr1.png!thumbnail" alt="图片"></p>
+</li>
+<li><p>然后我们发现Xcode右侧的File inspection变成了下图的样式，勾选其余需要国际化的语言：</p>
+</li>
+</ul>
+<p><img src="https://uploader.shimo.im/f/pu0Ls3KrSvUzVIAR.png!thumbnail" alt="图片"></p>
+<ul>
+<li>此时，Xcode左侧的InfoPlist.stirings左侧多了一个箭头，点击箭头可以展开，如下图所示：</li>
+</ul>
+<p><img src="https://uploader.shimo.im/f/U5bpdjZka6sIHUlE.png!thumbnail" alt="图片"></p>
+<p>接下来，我们给InfoPlist.strings下的文件分别设置对应语言的App 名称，加入如下代码（这里用InfoPlist.strings(japanese)举例）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// App在该环境下显示的名称</span><br><span class="line">CFBundleDisplayName = &quot;swiftデモ&quot;;</span><br></pre></td></tr></table></figure></p>
+<p>至此，本地化App名称已经演示完毕。<br>原理总结：程序启动时，会根据操作系统设置的语言，自动加载InfoPlist.strings文件下对应的语言文件，然后显示应用程序的名字。</p>
+<h3 id="代码中字符串的本地化"><a href="#代码中字符串的本地化" class="headerlink" title="代码中字符串的本地化"></a>代码中字符串的本地化</h3><ul>
+<li>和应用名称本地化一样，首先需要command + N，选择iOS -&gt; Resource -&gt; Strings File，文件名必须命名为 <strong>Localizable</strong></li>
+</ul>
+<p><img src="https://uploader.shimo.im/f/eluCgX2lELsF5bQ4.png!thumbnail" alt="图片"></p>
+<ul>
+<li>文件创建成功，查看Xcode左侧导航列表，发现多了一个名为Localizable.strings的文件，选中Localizable.strings文件，在Xcode的File inspection中点击Localize，目的是选择我们需要本地化的语言（和<strong>应用名称国际化</strong>同理），如下图：</li>
+</ul>
+<p><img src="https://uploader.shimo.im/f/U5bpdjZka6sIHUlE.png!thumbnail" alt="图片"></p>
+<ul>
+<li>此时，Xcode左侧的 Localizable.stirings 左侧多了一个箭头，展开后，如下图所示：</li>
+</ul>
+<p><img src="https://uploader.shimo.im/f/0O1N7oaU2Fk0V1n7.png!thumbnail" alt="图片"></p>
+<ul>
+<li><p>然后我们只需要在Localizable.strings下对应的文件中，分别以Key-Value的形式，为代码中每一个需要本地化的字符串赋值，如下(必须以”<strong>;</strong>“结束)：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&quot;首页&quot; = &quot;Home&quot;;</span><br><span class="line">&quot;我的&quot; = &quot;Mine&quot;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>我们只需要使用Foundation框架自带的NSLocalizedString(key, comment)，根据Key获取对应的字符串，然后赋值给代码中的字符串。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NSLocalizedString(&quot;首页&quot;, comment: &quot;首页&quot;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>至此，替换所有工程中需要显示的字符串后，就会随系统语言显示相应的文字。</p>
+
+  </section>
+
+</article>
+
+<section class="read-more">
+           
+    
+        
+        
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">Older Post</span>
+                <h2 class="post-list__post-title post-title"><a href="/2018/12/04/移动端自适应方案（基于vue-cli）/" title="移动端自适应方案（基于vue-cli）">移动端自适应方案（基于vue-cli）</a></h2>
+                <p class="excerpt">
+                
+                准备工作项目基础配置使用 vue-cli 生成移动端自适应方案：阿里可伸缩布局方案 - lib-flexiblepx 转 rem 工具：px2rem，它有 webpack 的 loader：px2rem-loader
+开始首先，我们使用 vue 的脚手架 vue-cli 来初始化一个 webpack
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2018-12-04T06:16:00.000Z" class="post-list__meta--date date">2018-12-04</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="tag-link" href="/tags/note/">note</a>
+</span><a class="btn-border-small" href="/2018/12/04/移动端自适应方案（基于vue-cli）/">继续阅读</a></div>
+                       
+            </div>
+        
+     
+   
+   
+  
+</section>
+
+  
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy; 2019 Lyons - 本站点采用 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+       
+    </span>
+    <span class="footer__copyright">
+             - 基于 <a href="http://hexo.io">Hexo</a> 搭建，使用 <a href="https://github.com/monniya/hexo-theme-new-vno ">new-vno</a> 主题，由<a href="https://monniya.com ">@Monniya</a> 修改自 <a href="https://github.com/lenbo-ma/hexo-theme-vno" target="_blank">Vno</a>, 原创出自<a href="http://github.com/onevcat/vno" target="_blank">onevcat</a>
+         </span>
+       
+    
+    
+</footer>
+
+
+        </div>
+    </div>
+
+     
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-116055068-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9cdad07c755fa23f6aced510c6760e87";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    
+</body>
+</html>
