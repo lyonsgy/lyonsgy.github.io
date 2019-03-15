@@ -143,51 +143,41 @@
   <section class="post">
     <h3 id="配置需要国际化的语言"><a href="#配置需要国际化的语言" class="headerlink" title="配置需要国际化的语言"></a>配置需要国际化的语言</h3><p>配置需要国际化的语言的准备工作，一个项目中仅需要配置一次，适用范围（App名称、代码中的字符串、图片、还是storyboard和xib）。</p>
 <ul>
-<li><p>选中project-&gt;Info-&gt;Localizations，然后点击”+”，添加需要国际化/本地化的语言，如下图（默认需要勾选Use Base Internationalization）：<img src="https://uploader.shimo.im/f/XVVWtFuMtlAwqxHT.png!thumbnail" alt="图片"></p>
+<li><p>选中project-&gt;Info-&gt;Localizations，然后点击”+”，添加需要国际化/本地化的语言，如下图（默认需要勾选Use Base Internationalization）：<br><img src="/images/2019-3-14/image1.png" alt=""></p>
 </li>
-<li><p>选择你需要的语言后弹出选择框，勾选你需要国际化的文件（默认全选）<img src="https://uploader.shimo.im/f/ALOXyfCOqUsNbaxI.png!thumbnail" alt="图片"></p>
+<li><p>选择你需要的语言后弹出选择框，勾选你需要国际化的文件（默认全选）<br><img src="/images/2019-3-14/image2.png" alt=""></p>
 </li>
 </ul>
 <h3 id="应用名称国际化"><a href="#应用名称国际化" class="headerlink" title="应用名称国际化"></a>应用名称国际化</h3><p> App 随设备语言环境（设备语言设置后）下变更</p>
 <ul>
-<li><p>选中Info.plist，按下键盘上的command + N，找到Strings File（iOS-&gt;Resource-&gt;Strings File），点击 Next<img src="https://uploader.shimo.im/f/xf9pUS6sK0QG3f1u.png!thumbnail" alt="图片"></p>
-</li>
-<li><p>文件名字命名为 <strong>InfoPlist</strong><img src="https://uploader.shimo.im/f/nhHHjtowK2YWYQIP.png!thumbnail" alt="图片"></p>
-</li>
-<li><p>点击create后，Xcode左侧导航列表就会出现名为InfoPlist.strings的文件，如下图：</p>
-</li>
+<li>选中Info.plist，按下键盘上的command + N，找到Strings File（iOS-&gt;Resource-&gt;Strings File），点击 Next<br><img src="/images/2019-3-14/image3.png" alt=""></li>
 </ul>
-<p><img src="https://uploader.shimo.im/f/it5XDCc2pSArZkBT.png!thumbnail" alt="图片"></p>
 <ul>
-<li>选中InfoPlist.strings，在Xcode的File inspection（Xcode右侧文件检查器）中点击Localize，如下图：</li>
+<li>文件名字命名为 <strong>InfoPlist</strong><br><img src="/images/2019-3-14/image4.png" alt=""></li>
 </ul>
-<p><img src="https://uploader.shimo.im/f/6RLdc8Y4FLggD3Mz.png!thumbnail" alt="图片"></p>
 <ul>
-<li><p>点击 Localize 后，会弹出一个对话框，展开对话框列表（下拉列表所展示的语言是刚刚上面配置的需要国际化的语言），然后点击对话框的 Localize 按钮，如下图：<img src="https://uploader.shimo.im/f/T9Z6Jaiyb9oGnSr1.png!thumbnail" alt="图片"></p>
-</li>
-<li><p>然后我们发现Xcode右侧的File inspection变成了下图的样式，勾选其余需要国际化的语言：</p>
-</li>
+<li>点击create后，Xcode左侧导航列表就会出现名为InfoPlist.strings的文件，如下图：<br><img src="/images/2019-3-14/image5.png" alt=""></li>
 </ul>
-<p><img src="https://uploader.shimo.im/f/pu0Ls3KrSvUzVIAR.png!thumbnail" alt="图片"></p>
 <ul>
-<li>此时，Xcode左侧的InfoPlist.stirings左侧多了一个箭头，点击箭头可以展开，如下图所示：</li>
+<li>选中InfoPlist.strings，在Xcode的File inspection（Xcode右侧文件检查器）中点击Localize，如下图：<br><img src="/images/2019-3-14/image6.png" alt=""></li>
 </ul>
-<p><img src="https://uploader.shimo.im/f/U5bpdjZka6sIHUlE.png!thumbnail" alt="图片"></p>
+<ul>
+<li><p>点击 Localize 后，会弹出一个对话框，展开对话框列表（下拉列表所展示的语言是刚刚上面配置的需要国际化的语言），然后点击对话框的 Localize 按钮，如下图：<br><img src="/images/2019-3-14/image7.png" alt=""></p>
+</li>
+<li><p>然后我们发现Xcode右侧的File inspection变成了下图的样式，勾选其余需要国际化的语言：<br><img src="/images/2019-3-14/image8.png" alt=""></p>
+</li>
+<li><p>此时，Xcode左侧的InfoPlist.stirings左侧多了一个箭头，点击箭头可以展开，如下图所示：<br><img src="/images/2019-3-14/image9.png" alt=""></p>
+</li>
+</ul>
 <p>接下来，我们给InfoPlist.strings下的文件分别设置对应语言的App 名称，加入如下代码（这里用InfoPlist.strings(japanese)举例）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// App在该环境下显示的名称</span><br><span class="line">CFBundleDisplayName = &quot;swiftデモ&quot;;</span><br></pre></td></tr></table></figure></p>
 <p>至此，本地化App名称已经演示完毕。<br>原理总结：程序启动时，会根据操作系统设置的语言，自动加载InfoPlist.strings文件下对应的语言文件，然后显示应用程序的名字。</p>
 <h3 id="代码中字符串的本地化"><a href="#代码中字符串的本地化" class="headerlink" title="代码中字符串的本地化"></a>代码中字符串的本地化</h3><ul>
-<li>和应用名称本地化一样，首先需要command + N，选择iOS -&gt; Resource -&gt; Strings File，文件名必须命名为 <strong>Localizable</strong></li>
-</ul>
-<p><img src="https://uploader.shimo.im/f/eluCgX2lELsF5bQ4.png!thumbnail" alt="图片"></p>
-<ul>
-<li>文件创建成功，查看Xcode左侧导航列表，发现多了一个名为Localizable.strings的文件，选中Localizable.strings文件，在Xcode的File inspection中点击Localize，目的是选择我们需要本地化的语言（和<strong>应用名称国际化</strong>同理），如下图：</li>
-</ul>
-<p><img src="https://uploader.shimo.im/f/U5bpdjZka6sIHUlE.png!thumbnail" alt="图片"></p>
-<ul>
-<li>此时，Xcode左侧的 Localizable.stirings 左侧多了一个箭头，展开后，如下图所示：</li>
-</ul>
-<p><img src="https://uploader.shimo.im/f/0O1N7oaU2Fk0V1n7.png!thumbnail" alt="图片"></p>
-<ul>
+<li><p>和应用名称本地化一样，首先需要command + N，选择iOS -&gt; Resource -&gt; Strings File，文件名必须命名为 <strong>Localizable</strong><br><img src="/images/2019-3-14/image10.png" alt=""></p>
+</li>
+<li><p>文件创建成功，查看Xcode左侧导航列表，发现多了一个名为Localizable.strings的文件，选中Localizable.strings文件，在Xcode的File inspection中点击Localize，目的是选择我们需要本地化的语言（和<strong>应用名称国际化</strong>同理），如下图：<br><img src="/images/2019-3-14/image11.png" alt=""></p>
+</li>
+<li><p>此时，Xcode左侧的 Localizable.stirings 左侧多了一个箭头，展开后，如下图所示：<br><img src="/images/2019-3-14/image12.png" alt=""></p>
+</li>
 <li><p>然后我们只需要在Localizable.strings下对应的文件中，分别以Key-Value的形式，为代码中每一个需要本地化的字符串赋值，如下(必须以”<strong>;</strong>“结束)：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&quot;首页&quot; = &quot;Home&quot;;</span><br><span class="line">&quot;我的&quot; = &quot;Mine&quot;;</span><br></pre></td></tr></table></figure>
 </li>
